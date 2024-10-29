@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class TestScript : MonoBehaviour
 {
-    private async void Start()
+    private void Start()
     {
         Debug.Log("Scanning...");
-        var devices = await Bluetooth.ScanForDevicesAsync();
+        var devices = Bluetooth.ScanForDevicesAsync().Result;
         foreach (var device in devices)
         {
             Debug.Log($"Name: {device.Name} Id: {device.Id}");
