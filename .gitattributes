@@ -1,0 +1,48 @@
+# Normalize line endings for any file git thinks is text
+* text=auto
+
+# Always diff, merge, and normalize source code and markup text
+*.cs text
+*.js text
+*.json text
+*.md text
+*.shader text
+*.txt text
+*.xml text
+*.yaml text
+
+# For Unity assets serialized to YAML, diff and merge them as text,
+# but do not normalize (assets might have been added in binary format)
+*.anim diff merge -text
+*.asset diff merge -text
+*.controller diff merge -text
+*.cubemap diff merge -text
+*.guiskin diff merge -text
+*.mat diff merge -text
+*.physicMaterial diff merge -text
+*.physicsMaterial2D diff merge -text
+*.prefab diff merge -text
+*.spriteatlas diff merge -text
+*.unity diff merge -text
+
+# Unity likes to swap line endings in these files, so do not normalize
+packages-lock.json diff merge -text
+
+# Never diff, merge, or normalize binary files
+*.dll binary
+*.exr binary
+*.fbx binary
+*.gif binary
+*.jpg binary
+*.mb binary
+*.ogg binary
+*.otf binary
+*.pdb binary
+*.pdf binary
+*.png binary
+*.psd binary
+*.raw binary
+*.tga binary
+*.tif binary
+*.ttf binary
+*.wav binary
