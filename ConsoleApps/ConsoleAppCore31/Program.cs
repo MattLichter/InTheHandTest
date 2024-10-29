@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InTheHand.Bluetooth;
+using System;
 
 namespace ConsoleAppCore31
 {
@@ -7,6 +8,12 @@ namespace ConsoleAppCore31
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            var devices = Bluetooth.ScanForDevicesAsync().Result;
+            foreach (var device in devices)
+            {
+                Console.WriteLine($"Name: {device.Name} Id: {device.Id}");
+            }
         }
     }
 }
