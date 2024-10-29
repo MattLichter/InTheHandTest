@@ -1,0 +1,9 @@
+# Directories
+bin/
+obj/
+
+# Files
+*.opensdf
+*.sdf
+*.suo
+*.user
